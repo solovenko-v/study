@@ -33,8 +33,8 @@ function Filters
     
     % butter
     n = 10; % Filter order, specified as an integer scalar.
-    [A,B,C,D] = cheby2(n,30,Wn,'s'); % butter(n,Wn) % lowpass filter with cutoff frequency Wn
-    % cheby2(n,30,Wn,'s'); butter(n,Wn,'s');
+    [A,B,C,D] = ellip(n,3,30,Wn,'s'); % butter(n,Wn) % lowpass filter with cutoff frequency Wn
+    % cheby1(n,3,Wn,'s'); cheby2(n,30,Wn,'s'); butter(n,Wn,'s'); ellip(n,3,30,Wn,'s');
     [Ahp,Bhp,Chp,Dhp] = lp2hp(A,B,C,D,3); % highpass filter with cutoff frequency Wn
     [Abp,Bbp,Cbp,Dbp] = lp2bp(A,B,C,D,Wo,Bw); % bandpass filter with central frequency Wo and bandwidth Bw
     [Abs,Bbs,Cbs,Dbs] = lp2bs(A,B,C,D,Wo,Bw); % bandstop filter with central frequency Wo and bandwidth Bw
