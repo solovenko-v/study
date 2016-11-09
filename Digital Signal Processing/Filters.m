@@ -1,26 +1,25 @@
+CONSOLE:
+ls -
+cd <dirname>
+
+git status
+
+git add <filename>
+git add . - add all untracked files
+git commit -m <commit name>
+git push
+
+git pull
+
+git checkout <name of branch>
+git checkout -b <name of branch> - create new branch
+
+VRKIooNEK
+
 function Filters
     
-    % Signal generate
-    % Frequences
-%     f1 = 1; % HZ
-%     f2 = 3; % HZ
     w1 = 1; %2 * pi * f1;
     w2 = 3; %* pi * f2;
-    % Amplitude
-    A1 = 3;
-    A2 = 5;
-    Anoise = 1;
-    % Phases
-    Phi1 = 0;
-    Phi2 = pi / 2;
-    
-    delta = 0.01; % precision
-
-    N = 5; % Number of long waves
-    TM = fix(2 * pi * N / min(w1, w2)); % longest wave period
-   
-    t = 0 : delta : TM; % time-vector
-    s = A1 * sin(w1 * t + Phi1) + A2 * sin(w2 * t + Phi2) + Anoise * rand(1,length(t)); % input signal
 
     % FILTERS
     % parameters for lowpass and highpass filters
@@ -31,16 +30,22 @@ function Filters
     Wo = sqrt(Wlo * Wup) % center frequency
     Bw = abs(Wup - Wlo); % bandwidth
     
-    % butter
+    % analog lowpass filter prototype
     n = 10; % Filter order, specified as an integer scalar.
-    [A,B,C,D] = ellip(n,3,30,Wn,'s'); % butter(n,Wn) % lowpass filter with cutoff frequency Wn
-    % cheby1(n,3,Wn,'s'); cheby2(n,30,Wn,'s'); butter(n,Wn,'s'); ellip(n,3,30,Wn,'s');
-    [Ahp,Bhp,Chp,Dhp] = lp2hp(A,B,C,D,3); % highpass filter with cutoff frequency Wn
+    Rp = 5; % dB of ripple in the passband
+    Rs = 10; % dB of ripple in the stopband
+    [z,p,k] = cheb2ap(n,Rs); % returns the zeros, poles, and gain
+    % besselap(n) buttap(n) cheb1ap(n,Rp) cheb2ap(n,Rs) ellipap(n,Rp,Rs)
+    [A,B,C,D] = zp2ss(z,p,k);
+    
+    % transforms analog lowpass filter prototypes
+    [Alp,Blp,Clp,Dlp] = lp2lp(A,B,C,D,Wn); % lowpass filter with cutoff frequency Wn
+    [Ahp,Bhp,Chp,Dhp] = lp2hp(A,B,C,D,Wn); % highpass filter with cutoff frequency Wn
     [Abp,Bbp,Cbp,Dbp] = lp2bp(A,B,C,D,Wo,Bw); % bandpass filter with central frequency Wo and bandwidth Bw
     [Abs,Bbs,Cbs,Dbs] = lp2bs(A,B,C,D,Wo,Bw); % bandstop filter with central frequency Wo and bandwidth Bw
     
     % LOWPASS FILTER (frequency response)
-    [b,a] = ss2tf(A,B,C,D);
+    [b,a] = ss2tf(Alp,Blp,Clp,Dlp);
     [h,w] = freqs(b,a,4096);
     h = mag2db(abs(h));
     for i = 1:length(w)
@@ -118,66 +123,36 @@ function Filters
     set(gca, 'Xlim', [0 1.2 * max(w1,w2)]);
     set(gca, 'Ylim', [1 + min(h) 1 + max(h)]);
     
+    %    
+    options = odeset('RelTol',1e-4,'AbsTol',[1e-4 1e-4 1e-5]);
+    [T,Ksi] = ode45(@ff,[0 12],zeros(n,1),[Alp Blp],options);
     
-%     for l = 1:20
-%         T = 10 * l * delta; % период с которым берутся отсчеты сигнала (в целых от дискретизации)
-%         % частота дискретизации
-%         Nt = pi / T;
-%         Tq = 1 / 2 * pi * max(omega1, omega2);
-%         Nn = fix(TM / T);
-%         sK = zeros(1, length(t)); 
-%         for k = 0:Nn
-%             ind = round(k * T / delta + 1);
-%             sK = sK + s(ind) * sinc(t / T - k);
-%         end    
-% 
-%     %     plot(t,s);
-%         plot(t,[s;sK]);
-%         title(['T/Tq = ' num2str(T /Tq)]);
-%         % pause(0.5);
-%         waitforbuttonpress;
-%     end
-%   
-%     s = 
-%     s = 5 * sin 
-%     T = 5; % period
-%     tau = 4; % impulse length (must be less then T)
-%     n = 3; % number of impulse in the signal
-%     c = 100;
-%     t = -T*n:(1/c):T*n; % time vector
-%     A = 3; % signal amplitude
-%     N = 50; % number of adds
-%     s  = zeros(1, 2*T*n*c+1); 
-%     for k = -n:n
-%         s = s + A * (heaviside(t-k*T)-heaviside(t-tau-k*T));
-%     end 
-%     
-%     axes
-%     q = T / tau;
-%     sF = (A / q) * ones(1, 2*T*n*c+1);
-%     for k = 1:N
-%         omega = 2 *  k / T;
-%         sF = sF + 2 * (A / q) * cos(pi * omega * (t - tau / 2)) *sinc(omega * tau / 2);
-%     end
-%     
-%     sx = std(s-sF)
-%     
-%     plot(t,[s;sF]);
-%     s = s + 0.01 * rand([length(s),1]);
+end
+
+function dksi = ff(t,ksi,A,B)
+
+    % Signal generate
+    % Frequences
+%     f1 = 1; % HZ
+%     f2 = 3; % HZ
+    w1 = 1; %2 * pi * f1;
+    w2 = 3; %* pi * f2;
+    % Amplitude
+    A1 = 3;
+    A2 = 5;
+    Anoise = 1;
+    % Phases
+    Phi1 = 0;
+    Phi2 = pi / 2;
+    
+    delta = 0.01; % precision
+
+    N = 5; % Number of long waves
+    TM = fix(2 * pi * N / min(w1, w2)); % longest wave period
    
-%     S = fft(s);
-%     s1 = ifft(S); 
-%     plot(t,[s;s1]);
-% %     f = Fs*(0:(L/2))/L; 
-%     S = fft(s);
-%     figure
-%     subplot(2,1,1);
-%     plot(t,s)
-% 
-%     subplot(2,1,2);
-%     plot(f,S);
+    t = 0 : delta : TM; % time-vector
+    s = A1 * sin(w1 * t + Phi1) + A2 * sin(w2 * t + Phi2) + Anoise * rand(1,length(t)); % input signal
     
-%     subplot
-%     S = fft(s, 5);
-%     s1 = ifft(S, 5);
-%     plot(t,[s;s1]);
+    dksi = A * ksi + B * s;    % a column vector
+   
+end
