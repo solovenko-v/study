@@ -10,7 +10,7 @@ function Filters
 
     % FILTERS
     % parameters for lowpass and highpass filters
-    Wn = 5; % cutoff frequency
+    Wn = 15; % cutoff frequency
     % parameters for bandpass and bandstop filters
     Wlo = 2; % lower band edge 
     Wup = 4; % upper band edge
@@ -22,8 +22,8 @@ function Filters
     % analog lowpass filter prototype
     n = 10; % Filter order, specified as an integer scalar.
     Rp = 5; % dB of ripple in the passband
-    Rs = 10; % dB of ripple in the stopband
-    [z,p,k] = cheb2ap(n,Rs); % returns the zeros, poles, and gain
+    Rs = 50; % dB of ripple in the stopband
+    [z,p,k] = buttap(n); % returns the zeros, poles, and gain
     % besselap(n) buttap(n) cheb1ap(n,Rp) cheb2ap(n,Rs) ellipap(n,Rp,Rs)
     [A,B,C,D] = zp2ss(z,p,k);
     
@@ -122,7 +122,9 @@ function Filters
     u = signal(t, Omega, Amp, AmpN, Phi);
     y = Clp * x' + Dlp * u';    
     subplot(2,4,5);
-    plot(t,u,t,y);
+    plot(t,u,t,y); 
+    xlabel('time')
+    ylabel('Amplitude')
     
     % HP
     opt = odeset('RelTol',1e-4);
@@ -132,7 +134,9 @@ function Filters
     u = signal(t, Omega, Amp, AmpN, Phi);
     y = Chp * x' + Dhp * u';    
     subplot(2,4,6);
-    plot(t,u,t,y);
+    plot(t,u,t,y); 
+    xlabel('time')
+    ylabel('Amplitude')
 
     % BP
     opt = odeset('RelTol',1e-4);
@@ -142,7 +146,9 @@ function Filters
     u = signal(t, Omega, Amp, AmpN, Phi);
     y = Cbp * x' + Dbp * u';    
     subplot(2,4,7);
-    plot(t,u,t,y);
+    plot(t,u,t,y); 
+    xlabel('time')
+    ylabel('Amplitude')
      
     % BS
     opt = odeset('RelTol',1e-4);
@@ -152,7 +158,9 @@ function Filters
     u = signal(t, Omega, Amp, AmpN, Phi);
     y = Cbs * x' + Dbs * u';    
     subplot(2,4,8);
-    plot(t,u,t,y);   
+    plot(t,u,t,y);
+    xlabel('time')
+    ylabel('Amplitude')  
      
 end
     
