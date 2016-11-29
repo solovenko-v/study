@@ -4,8 +4,7 @@ function Filters
     Omega = [1 3 8];
     % Amplitudes
     Amp = [20 5 2];
-    AmpN = 0; % noise amplitude
-    % Phases
+    AmpN = 0.5; % noise amplitude    % Phases
     Phi = [0 pi/2 pi/3];
 
     % FILTERS
@@ -20,7 +19,7 @@ function Filters
     OmegaMax = max(max(Omega, Wn));
     
     % analog lowpass filter prototype
-    n = 10; % Filter order, specified as an integer scalar.
+    n = 5; % Filter order, specified as an integer scalar.
     Rp = 5; % dB of ripple in the passband
     Rs = 50; % dB of ripple in the stopband
     [z,p,k] = buttap(n); % returns the zeros, poles, and gain
