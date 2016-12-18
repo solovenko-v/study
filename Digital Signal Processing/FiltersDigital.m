@@ -1,8 +1,7 @@
 function FiltersDigital
     
     % TYPE OF FILTRATION
-    ftype = 0; % difference
-    ftype = 1; % convolution
+    ftype = 0; % 0- difference; 1 - convolution
 
     Np = 3; % number of periods
     % Frequences
@@ -31,7 +30,7 @@ function FiltersDigital
     Wlp = 0.1;
     Whp = 0.3;
     Wbp = [0.1 0.3];
-    Wbs = [0.1 0.9];
+    Wbs = [0.1 0.75];
     n = 10; % filter order
     Rs = 40; % dB of attenuation
     
@@ -111,7 +110,7 @@ function FiltersDigital
     b = fir1(ord,[low bnd],'DC-1',tukeywin(ord+1));
     a = 1;
     dataIn = s;
-    dataOut = filter(b,a,dataIn);
+    dataOut = apply_filter(b,a,dataIn,fs,ftype); %filter(b,a,dataIn);
     subplot(2,2,1);
     [h,w] = freqz(b,a);
     plot(w/pi,20*log10(abs(h)), Om1, H, Om2, H, Om3, H);
@@ -129,7 +128,7 @@ function FiltersDigital
     b = firpm(17,f,c);
     a = 1;
     dataIn = s;
-    dataOut = filter(b,a,dataIn);
+    dataOut = apply_filter(b,a,dataIn,fs,ftype); %filter(b,a,dataIn);
     subplot(2,2,2);
     [h,w] = freqz(b,a);
     plot(w/pi,20*log10(abs(h)), Om1, H, Om2, H, Om3, H);
@@ -179,13 +178,13 @@ end
 
 function y = apply_filter(b,a,x,fs,ftype)
     if ftype == 0
-        y = filter_raznost(b,a,x);
+        y = filter_dif(b,a,x);
     else
         y = filter_convolution(b,a,x,fs);
     end
 end
 
-function y = filter_raznost(b,a,x)
+function y = filter_dif(b,a,x)
     
     Nt = length(x);
     y = zeros(1,Nt);
@@ -197,13 +196,15 @@ function y = filter_raznost(b,a,x)
     x = [zeros(1,shift) x];
     y = [zeros(1,shift) y];
     
-    for n = shift:(Nt+shift)
+    for n = shift:Nt+shift
         for i = 1:P
             y(n) = y(n) + b(i)*x(n+1-i);
         end
-        for k = 1:Q
-            y(n) = y(n) - a(k)*y(n-k);
+        for k = 2:Q
+            y(n) = y(n) - a(k)*y(n+1-k);
         end
+        y(n) = 1 / a(1) * y(n);
+        a(1)
     end
     
     x = x(shift+1:end);
