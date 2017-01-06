@@ -27,11 +27,11 @@ function FiltersDigital
     s = signal(t, Om, Amp, AmpN, Phi);
     
     % IIR FILTERS
-    Wlp = 0.1;
+    Wlp = 0.25;
     Whp = 0.3;
     Wbp = [0.1 0.3];
     Wbs = [0.1 0.75];
-    n = 10; % filter order
+    n = 4; % filter order
     Rs = 40; % dB of attenuation
     
     % lowpass

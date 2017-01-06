@@ -1,0 +1,611 @@
+------------------------------------------------------------------------
+ Key  Command     Description
+------------------------------------------------------------------------
+  N   New         To enter input data.
+  L   Load        To load data set from the disk.
+  S   Save        To store data set on the disk.
+  E   Edit        To correct the input data entered.
+  R   Run         To obtain solutions.
+  P   Print       To print input and output after running the program.
+  I   Install     To specify working disk.
+  D   Directory   To get a working disk directory and information.
+ Esc  Escape      To exit to the previous stage.
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+ Key           Description
+------------------------------------------------------------------------
+ Backspace     To delete the character to the left of the cursor.
+ Del           To delete character under cursor.
+ F7            To insert one row below the cursor.
+ F8            To insert one column to the left of the cursor.
+ F9            To delete the row containing the cursor.
+ F10           To delete the column containing the cursor.
+ PgUp          To move the cursor one page up.
+ PgDn          To move the cursor one page down.
+ Up Arrow      To move the cursor one cell (line) up.
+ Down Arrow    To move the cursor one cell (line) down.
+ Left Arrow    To move the cursor one cell left.
+ Right Arrow   To move the cursor one cell right.
+ Home          To move to the first column when you use New or Edit
+                 commands.
+               To move to the top of the file when you use Run, Help,
+                 or Directory commands.
+ End           To move to the last column when you use New or Edit
+                 commands.
+               To move to the bottom of the file when you use Run, Help,
+                 or Directory commands.
+------------------------------------------------------------------------
+
+
+
+1 1
+
+Purpose
+-------
+
+Linear Programming determines the optimum allocation of scarce resources
+to achieve the minimum or maximum of a single objective criterion.
+
+
+Limitations of System
+---------------------
+
+1. Maximum number of constraints        : 50
+2. Maximum number of decision variables : 50
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. If objective function for your problem is maximization, type 1;
+   otherwise type 2 in the Type of Problem row.
+3. If you want to include all simplex tableaux in the output and the
+   number of variables and constraints are both less than or equal to
+   five, type 1; type 2 for a final tableau only; type 3 for no tableau.
+4. Enter the number of constraints and decision variables in the problem
+   you want to solve.
+
+
+<< Middle Window >>
+
+1. Enter the coefficient values of the decision variables in the
+   objective function in row Obj.
+2. Enter the coefficient values of the decision variables in each
+   constraint at the intersection of the appropriate variable column (x1,
+   x2, ...) and constraint row (C1, C2, ...).
+3. Enter the type of each constraint in column T.
+   If the constraint is >= then enter > ;
+                        <= then enter < ; or
+                         = then enter = .
+4. Enter the right hand side value of each constraint in column Rhs.
+
+
+***** End of Help *****
+2 1
+
+Purpose
+-------
+
+All Integer Programming determines the optimum solution to meet integer
+requirements of a linear programming problem using the branch and bound
+method.  The major purpose of this program is to provide you with an idea
+about how the technique works and how it can be applied to real-world
+problems.
+
+
+Limitations of System
+---------------------
+
+1. Maximum number of constraints        : 15
+2. Maximum number of decision variables : 15
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. If the objective function is maximization, type 1, otherwise type 2 in
+   the Type of Problem row.
+3. Enter the number of constraints and decision variables in the problem
+   you want to solve.
+
+
+<< Middle Window >>
+
+1. Enter the coefficient values of the decision variables in the
+   objective function in row Obj.
+2. Enter the coefficient values of the decision variables in each
+   constraint at the intersection of the appropriate variable column (x1,
+   x2, ...) and constraint row (C1, C2, ...).
+3. Enter the type of each constraint in column T.
+   If the constraint is >= then enter > ;
+                        <= then enter < ; or
+                         = then enter = .
+4. Enter the right hand side value of each constraint in column Rhs.
+
+
+***** End of Help *****
+3 1
+
+Purpose
+-------
+
+Zero One Programming determines the optimum solution to the zero or one
+type of linear programming problems.  This program utilizes the implicit
+enumeration algorithm.
+
+
+Limitations of System
+---------------------
+
+1. Maximum number of constraints        : 15
+2. Maximum number of decision variables : 15
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. If the objective function is maximization, type 1, otherwise type 2 in
+   the Type of Problem row.
+3. Enter the number of constraints and decision variables in the problem
+   you want to solve.
+
+
+<< Middle Window >>
+
+1. Enter the coefficient values of the decision variables in the
+   objective function in row Obj.
+2. Enter the coefficient values of the decision variables in each
+   constraint at the intersection of the appropriate variable column (x1,
+   x2, ...) and constraint row (C1, C2, ...).
+3. Enter the type of each constraint in column T.
+   If the constraint is >= then enter > ;
+                        <= then enter < ; or
+                         = then enter = .
+4. Enter the right hand side value of each constraint in column Rhs.
+
+
+***** End of Help *****
+4 1
+
+Purpose
+-------
+
+Goal Programming determines a satisfying solution for a decision-making
+problem with multiple objectives.
+
+
+Limitations of System
+---------------------
+
+1. Maximum number of constraints        : 50
+2. Maximum number of decision variables : 50
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. If you want to include a final simplex tableau in the output, type 1;
+   otherwise type 2.
+3. Enter the number of constraints and decision variables in the problem
+   you want to solve.
+
+
+<< Middle Window >>
+
+1. The first four columns, W(d+), P(d+), W(d-), and P(d-) are reserved
+   for the objective function.  If you want to minimize the positive
+   deviational variable in a constraint, move the cursor to that
+   constraint and enter the weight in the W(d+) and the priority in the
+   P(d+) column, respectively.
+   If you want to minimize the negative deviational variable in a
+   constraint, move the cursor to that constraint and enter the weight in
+   the W(d-) and the priority in the P(d-) column, respectively.
+2. Enter the coefficient values of the decision variables in each
+   constraint at the intersection of the appropriate variable column (x1,
+   x2, ...) and constraint row (C1, C2, ...).
+3. In column T, enter constraint types.
+   If a constraint is a system constraint and the constraint type is:
+      >= then enter > ;
+      <= then enter < ; or
+       = then enter = .
+   If a constraint is a goal constraint then enter =.
+4. Enter the right hand side value of each constraint in column Rhs.
+
+
+***** End of Help *****
+5 1
+
+Purpose
+-------
+
+Transportation solves a special type of linear programming problem by
+finding either the minimum total transportation cost or the maximum
+payoff for a distribution problem where items are shipped from a set of
+sources to a set of destinations.
+
+
+Limitations of System
+---------------------
+
+1. Maximum number of sources      : 40
+2. Maximum number of destinations : 40
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. If the objective is maximization, type 1; otherwise type 2 in the Type
+   of Problem row.
+3. This program gives an initial solution by the Northwest Corner Method
+   (NW), the Minimum-Cell-Cost Method (MC), or Vogel's Approximation
+   Method (VAM), according to your selection; type 1, 2, or 3.
+4. Enter the number of sources and destinations in the problem you want
+   to solve.
+
+
+<< Middle Window >>
+
+1. Enter the corresponding unit transportation cost at the intersection
+   of each destination column Di and each source row Si.
+   (Note: If a cell is to be considered a "prohibited route," where no
+   units should be allocated, it must be given an extremely undesirable
+   cost (the "Big M" method).  In a minimization problem, the cost should
+   be a positive value at least ten times as large as the highest cost in
+   the feasible cells.  In a maximization problem, it should be a
+   negative value at least ten times the size of the largest value in the
+   feasible cells.)
+2. Enter the available capacity for each supply (source) in the "Sources"
+   column.
+3. Enter the available capacity for each demand (destination) in the
+   "Des." row.
+
+
+***** End of Help *****
+6 1
+
+Purpose
+-------
+
+Assignment solves a special type of linear programming problem where the
+objective is to find the maximum payoff or minimum cost that can be
+obtained by assigning a set of objects to a set of stations.
+
+
+Limitations of System
+---------------------
+
+1. Maximum number of rows    : 40
+2. Maximum number of columns : 40
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. If the objective is maximization, type 1; otherwise type 2 in the Type
+   of Problem row.
+3. Enter the number of rows and columns in the problem you want to solve.
+
+
+<< Middle Window >>
+
+1. Enter the corresponding unit cost/profit at the intersection of each
+   column Ci and each row Ri.
+
+
+***** End of Help *****
+7 1
+
+Purpose
+-------
+
+Break-Even Analysis determines the volume at which we break even from an
+operation by analyzing the relationship among costs, volume, and profit. 
+The output will show the level of operation in terms of the quantity of
+products, total dollar amount of transactions, and the percentage of
+productive capacity.  This program can handle almost any size break even
+problem.
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+
+
+<< Middle Window >>
+
+1. Input the total fixed cost, unit variable cost, and unit selling price.
+2. Input the expected sales volume (units).  If the expected sales volume
+   is not available in your problem, then enter 0.
+
+
+***** End of Help *****
+8 1
+
+Purpose
+-------
+
+Decision Making under Risk determines the expected payoff or monetary
+value for each course of action when certain probabilities are given for
+possible events or states of nature.  The output presents the maximum
+expected monetary value or minimum expected loss (cost) of the best
+course of action. 
+
+
+Limitations of System
+---------------------
+
+1. Number of alternatives : between 2 and 20
+2. Number of events       : between 2 and 20
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. If your expected value is profit (payoff) then enter 1, otherwise
+   enter 2.
+3. Enter the number of alternatives and events in the problem which you
+   want to solve.
+
+
+<< Middle Window >>
+
+1. Input the probability for each possible event.
+2. Input the conditional payoff for each combination of alternative and
+   event.
+
+
+***** End of Help *****
+8 2
+
+Purpose
+-------
+
+Decision Making under Uncertainty determines the best alternative among
+various courses of action available under uncertainty.  It utilizes
+various decision criteria such as Laplace, maximin, maximax, Hurwicz, and
+minimax.  The output will indicate either the maximum expected value or
+minimum expected loss (cost) by analyzing the alternatives under various
+states of nature.
+
+
+Limitations of System
+---------------------
+
+1. Value of Hurwicz Alpha coefficient : between 0.00 and 1.00
+2. Number of alternatives             : between 2 and 20
+3. Number of events                   : between 2 and 20
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. Input the coefficient of optimism (Hurwicz Alpha).
+3. If your expected value is profit (payoff) then enter 1, otherwise
+   enter 2.
+4. Enter the number of alternatives and events in the problem which you
+   want to solve.
+
+
+<< Middle Window >>
+
+1. Input the conditional payoff for each combination of alternative and
+   event.
+
+
+***** End of Help *****
+8 3
+
+Purpose
+-------
+
+Decision Tree determines the optimum alternative that should be selected
+among various paths of a decision tree.  It also computes the expected
+value of the optimum alternative.
+
+
+Limitation of System
+--------------------
+
+1. Number of branches : between 2 and 50
+2. All nodes must be numbered using sequential integers, starting with 1.
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. If your expected value is profit (payoff) then enter 1, otherwise
+   enter 2.
+3. Enter the number of branches in the problem which you want to solve.
+
+
+<< Middle Window >>
+
+1. For each branch, input the starting node number and ending node number
+   in column SN and EN, respectively.
+2. For each branch, input the type of branch.  If the branch represents
+   an event type E, otherwise type D (decision).
+3. Input probability and payoff as needed.
+
+
+***** End of Help *****
+8 4
+
+Purpose
+-------
+
+Bayes' Decision Rule computes the marginal probabilities and posterior
+probabilities, given that an event has taken place.
+
+
+Limitations of System
+---------------------
+
+1. Number of alternatives : between 2 and 20
+2. Number of events       : between 2 and 20
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. Enter the number of alternatives and events in the problem which you
+   want to solve.
+
+
+<< Middle Window >>
+
+1. For each alternatives, input the prior probability in column Prior.
+2. Input the conditional probability for each combination of alternative
+   and event.
+
+
+***** End of Help *****
+9 1
+
+Purpose
+-------
+
+Shortest Route determines the shortest route from an origin to a
+destination through a connected network, given the distance associated
+with each branch of the network.  The output shows the complete route
+from the starting node to the ending node.
+
+
+Limitations of System
+---------------------
+
+1. Number of nodes    : between 3 and 50
+2. Number of branches : between 3 and 50
+3. All nodes must be numbered using sequential integers, starting with 1.
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. If the type of the graph (branches) is directed, type 1; otherwise
+   enter 2.
+3. Enter the number of nodes and branches in the problem you want to
+   solve.
+
+
+<< Middle Window >>
+
+1. Input the starting node number and ending node number of each branch
+   in column SN and EN, respectively.
+2. Enter the value of each branch.
+
+
+***** End of Help *****
+9 2
+
+Purpose
+-------
+
+Minimum Spanning Tree determines the best way to connect all the nodes in
+a network such that the total of all branch lengths required is
+minimized.  The program output includes the total length of the minimum
+spanning tree and the branches that connect all of the nodes in the
+network.  
+
+
+Limitations of System
+---------------------
+
+1. Number of nodes    : between 3 and 50
+2. Number of branches : between 3 and 50
+3. All nodes must be numbered using sequential integers, starting with 1.
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. Enter the number of nodes and branches in the problem you want to
+   solve.
+
+
+<< Middle Window >>
+
+1. Input the starting node number and ending node number of each branch
+   in column SN and EN, respectively.
+2. Enter the value of each branch.
+
+
+***** End of Help *****
+9 3
+
+Purpose
+-------
+
+Maximum Flow determines a route which maximizes the total flow from a
+specified source to a specified destination in a network.  As inverse
+direction flow is possible in some cases, this option is included in this
+program.
+
+
+Limitations of System
+---------------------
+
+1. Number of nodes    : between 3 and 50
+2. Number of branches : between 3 and 50
+3. All nodes must be numbered using sequential integers, starting with 1.
+
+
+Explanation of Key Words and How to Input Data
+----------------------------------------------
+
+<< Upper Window >>
+
+1. Type the problem title or your comment for later reference purposes.
+2. Enter the number of nodes and branches in the problem you want to
+   solve.
+
+
+<< Middle Window >>
+
+1. Input the starting node number and ending node number of each branch
+   in column SN and EN, respectively.
+2. Enter the capacity (value) of each branch.
+3. Input the inverse direction capacity (value) of each branch.
+
+
+***** End of Help *****
+

@@ -1,0 +1,13 @@
+10 CLS
+20 N=0:INPUT"A,B,E", A,B,E
+30 DEF FNF(X)=LOG((X+1)/(1-X))-(X-1)^2
+40 C=B-((B-A)/(FNF(B)-FNF(A))*FNF(B))
+50 C1=B-(((B-C)/(FNF(B)-FNF(C)))*FNF(B))
+60 D=ABS(C1-C)
+70 PRINT N;" C= ";C;" F(C)= ";FNF(C1);" Žƒ…˜Ž‘’œ ";D
+80 C=C1:N=N+1
+85 IF N>20 THEN 100
+90 IF D>E THEN 50
+100 PRINT"x=";C
+110 END
+
