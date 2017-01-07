@@ -1,0 +1,16 @@
+{
+    "remotePath": "./www_old",
+    "host": "lamp.spsu.ru",
+    "username": "solovenko",
+    "password": "123456",
+    "port": 22,
+    "protocol": "sftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git"
+    ]
+}
