@@ -1,0 +1,67 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{indentfirst}
+\usepackage{ccaption}
+\captiondelim {. }
+
+\usepackage[
+top = 1.5cm,
+bottom = 2cm,
+left = 2cm,
+right = 1.5cm
+]{geometry}
+
+\begin{document}
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
+\title{Теорема Гаусса}
+\author{Гаусс К. \footnote{ПГУ. им. Т.Г. Шевченко}}
+\maketitle
+\begin{abstract}
+В статье ктатко изложены сведения о теореме Гаусса --- важной и полезной <<Штуке>>.
+\end{abstract}
+\section{Введение}
+\emph{Теорема Гаусса (закон Гаусса)} --- один из основных законов электродинамики, входит в систему уравнений Максвелла. Выражает связь (а именно равенство с точностью до постоянного коэффициента) между потоком напряжённости электрического поля сквозь замкнутую поверхность произвольной формы и алгебраической суммой зарядов, расположенных внутри этой поверхности, деленной на электрическую постоянную $\varepsilon_0$. Применяется отдельно для вычисления электростатических полей.
+
+Теорему Гаусса можно записать для:
+\begin{itemize}
+\item{электрической индукции}
+\item{магнитной индукции}
+\end{itemize}
+
+Рассмотрим только первый случай.
+
+\section{Формула для электрической индукции}
+Для поля в диэлектрической среде электростатическая теорема Гаусса может быть записана в виде (\ref{eq:gauss_int}).
+\begin{equation} \label{eq:gauss_int}
+\Phi_{\vect{D}}\equiv\oint_S\vect{D}d\vect{S}=4\pi Q.
+\end{equation}
+
+В дифференциальной форме:
+\begin{equation} \label{eq:gauss_diff}
+\operatorname{div}\vect{D}\equiv\nabla\cdot\vect{D}=4\pi\rho,
+\end{equation}
+
+Все выражения записаны для единиц в системе СГС. За подробностями обращайтесь к \cite{LL}.
+
+\section{Дивергенция}
+В выражении (\ref{eq:gauss_diff}) используется дивергенция. Это векторный оператор, определяемый следующим образом:
+\begin{equation} \label{eq:div_vec}
+\operatorname{div}\vect{A}=\nabla\vect{F}=\lim_{n \to \infty}\frac{\Phi_F}{V},
+\end{equation}
+
+где $\Phi_F$ --- поток векторного поля.
+
+В декартовых координатах:
+\begin{equation} \label{eq:div_dec}
+\operatorname{div}\vect{F}=\frac{\partial F_x}{\partial x}+\frac{\partial F_y}{\partial y}+\frac{\partial F_z}{\partial z}.
+\end{equation}
+
+\begin{thebibliography}{99}
+\bibitem{LL} Ландау, Л.Д., Лифшиц Е.М. Электродинамика сплошных сред. --- М.:Физматлит, 2005.
+\end{thebibliography}
+
+\end{document} 
