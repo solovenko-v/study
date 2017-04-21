@@ -41,7 +41,7 @@ printfn "-----------------------------------------------------------"
 
 printfn "4.2-5 Определить функцию для приближённого вычисления производной"
 
-let Derivative h f x = (-3.0 * f(x) + 4.0 * f(x + h) - f(x + 2.0 * h) / (1.0 * h))
+let Derivative h f x = (-3.0 * f(x) + 4.0 * f(x + h) - f(x + 2.0 * h)) / (2.0 * h)
 
 let Derivative_simple h f x = ((f(x+h) - f(x))/h)
 
@@ -73,7 +73,7 @@ printfn "4.2-9 Определённый интеграл методом цент
 
 let N = 100.0
 let a = 0.0
-let b = 2.0
+let b = 1.0
 
 let rec Integral acc k N f a b =
     if k > N - 1.0 then

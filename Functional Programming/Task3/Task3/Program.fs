@@ -4,11 +4,6 @@ let rec readFloat() =
     | false, _ -> printfn "?"; readFloat()
     | _, x -> x
 
-let rec readLine() =
-    match System.Console.ReadLine() with
-    | "end" -> printf "end"
-    | x -> readLine()
-
 printf "a="
 let a = readFloat()
 printf "eps="
@@ -26,4 +21,4 @@ let sqrtH = sqrtHeron a eps
 printfn "sqrt = %A" sqrtH
 printfn "delta = %A" (sqrt(a) - sqrtH)
 
-let any = readLine()           
+let any = System.Console.ReadLine()             
