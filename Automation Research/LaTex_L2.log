@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.8)  6 MAR 2017 11:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.8)  26 JUN 2017 11:13
 entering extended mode
 **D:/Documents/study/study/Automation*Research/LaTex_L2.tex
 ("D:/Documents/study/study/Automation Research/LaTex_L2.tex"
@@ -900,69 +900,94 @@ LaTeX Info: Redefining \nameref on input line 26.
 \everyMPtoPDFconversion=\toks34
 )
 \c@lstlisting=\count131
- [1
+ ("D:\Documents\study\study\Automation Research\LaTex_L2.bbl") [1
 
-{C:/Program Files (x86)/MikTex/Full_TeX/texmf/pdftex/config/pdftex.map}]
-[2] ("D:\Documents\study\study\Automation Research\LaTex_L2.toc")
+{C:/Program Files (x86)/MikTex/Full_TeX/texmf/pdftex/config/pdftex.map}] [2]
+("D:\Documents\study\study\Automation Research\LaTex_L2.toc")
 \tf@toc=\write4
  [3]
-LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
 
 ("C:\Program Files (x86)\MikTex\Full_TeX\texmf\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 
 ("C:\Program Files (x86)\MikTex\Full_TeX\texmf\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 49.
 
+LaTeX Warning: Citation `Tito2017' on page 4 undefined on input line 47.
+
+
+LaTeX Warning: Citation `Gold1987' on page 4 undefined on input line 47.
+
+
+LaTeX Warning: Citation `Pozdnyakov2006' on page 4 undefined on input line 48.
+
+
+LaTeX Warning: Citation `Feenstra1995' on page 4 undefined on input line 49.
+
+
+LaTeX Warning: Citation `Yoon2005' on page 4 undefined on input line 50.
+
+
+LaTeX Warning: Citation `Yutani1996' on page 4 undefined on input line 51.
+
+
+LaTeX Warning: Citation `Tito2017' on page 4 undefined on input line 51.
+
+
+LaTeX Warning: Citation `Yoon2005' on page 4 undefined on input line 51.
+
+
+LaTeX Warning: Citation `Yoon2005' on page 4 undefined on input line 52.
+
+
+LaTeX Warning: Citation `Penner1999' on page 4 undefined on input line 53.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 59.
 ("C:\Program Files (x86)\MikTex\Full_TeX\texmf\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 59.
 
-<L2_p1.jpg, id=67, 205.5178pt x 194.97844pt>
+<L2_p1.jpg, id=62, 205.5178pt x 194.97844pt>
 File: L2_p1.jpg Graphic file (type jpg)
  <use L2_p1.jpg>
-Package pdftex.def Info: L2_p1.jpg used on input line 57.
+Package pdftex.def Info: L2_p1.jpg used on input line 67.
 (pdftex.def)             Requested size: 170.71652pt x 161.96295pt.
  [4 <D:/Documents/study/study/Automation Research/L2_p1.jpg>]
 
-LaTeX Warning: Citation `b0' on page 5 undefined on input line 84.
+LaTeX Warning: Citation `b0' on page 5 undefined on input line 93.
 
-[5] [6] ("D:\Documents\study\study\Automation Research\LaTex_L2.bbl" [7]
-
-LaTeX Warning: Empty `thebibliography' environment on input line 17.
-
-) [8]
+[5] [6] [7]
 ("C:\Program Files (x86)\MikTex\Full_TeX\texmf\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 117.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 117.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
  ("D:\Documents\study\study\Automation Research\LaTex_L2.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 117.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 117.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
 Package rerunfilecheck Info: File `LaTex_L2.out' has not changed.
-(rerunfilecheck)             Checksum: 3C015A25B3ADB9C0C4684297CBB448B9;1427.
+(rerunfilecheck)             Checksum: D972209A8F016BE29F50EA3F02AE8B78;1244.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 117.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
  ) 
 Here is how much of TeX's memory you used:
  13484 strings out of 493921
- 182916 string characters out of 3150556
- 271523 words of memory out of 3000000
- 16583 multiletter control sequences out of 15000+200000
+ 182933 string characters out of 3150556
+ 271369 words of memory out of 3000000
+ 16584 multiletter control sequences out of 15000+200000
  18333 words of font info for 50 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,15n,74p,1004b,1296s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,15n,74p,1069b,1296s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MikTex/Full_TeX/texmf/fonts/enc/dvips/cm-super/cm-sup
 er-t2a.enc}<C:/Program Files (x86)/MikTex/Full_TeX/texmf/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb><C:/Program Files (x86)/MikTex/Full_TeX/texmf/fonts/type1/p
@@ -982,9 +1007,9 @@ nts/type1/public/cm-super/sfrm1095.pfb><C:/Program Files (x86)/MikTex/Full_TeX/
 texmf/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Program Files (x86)/MikTex/F
 ull_TeX/texmf/fonts/type1/public/cm-super/sfrm1440.pfb><C:/Program Files (x86)/
 MikTex/Full_TeX/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on LaTex_L2.pdf (9 pages, 242408 bytes).
+Output written on LaTex_L2.pdf (8 pages, 241085 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 160 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
+ 62 words of extra memory for PDF output out of 10000 (max. 10000000)
 

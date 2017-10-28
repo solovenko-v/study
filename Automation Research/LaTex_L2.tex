@@ -25,6 +25,8 @@
 
 \begin{document}
 
+\bibliography{LaTex_L2}
+
 \newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
 
 \setcourse{Доклад}
@@ -42,7 +44,15 @@
 
 \ssection{Введение}
 
-\emph{Теорема Гаусса (закон Гаусса)} --- один из основных законов электродинамики, входит в систему уравнений Максвелла. Выражает связь (а именно равенство с точностью до постоянного коэффициента) между потоком напряжённости электрического поля сквозь замкнутую поверхность произвольной формы и алгебраической суммой зарядов, расположенных внутри этой поверхности, деленной на электрическую постоянную $\varepsilon_0$. Применяется отдельно для вычисления электростатических полей.
+\emph{Теорема Гаусса (закон Гаусса)} --- один из основных законов электродинамики, входит в систему уравнений Максвелла. Выражает связь (а именно равенство с точностью до постоянного коэффициента) между потоком напряжённости электрического поля сквозь замкнутую поверхность произвольной формы и алгебраической суммой зарядов, расположенных внутри этой поверхности, деленной на электрическую постоянную $\varepsilon_0$. Применяется отдельно для вычисления электростатических полей. Как было показано в \cite{Tito2017,Gold1987} ...
+Аналогично \cite{Pozdnyakov2006}
+В работе \cite{Feenstra1995}
+Авторы работы \cite{Yoon2005} показали
+В \cite{Yutani1996,Tito2017,Yoon2005}
+В \cite{Yoon2005}
+В \cite{Penner1999}
+
+
 
 Теорему Гаусса можно записать для:
 \begin{itemize}
@@ -52,11 +62,10 @@
 
 Рассмотрим только первый случай.
 
-\begin{figure}[bh]
-    \noindent
-    \center{\includegraphics[width=60mm]{L2_p1.jpg}}
-    \caption{Поток вектора через замкнутую поверхность}
-    \label{figCurves}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{L2_p1.jpg}
+\caption{Поток вектора через замкнутую поверхность \label{figCurves}}
 \end{figure}
 
 \section{Формула для электрической индукции}
@@ -65,13 +74,13 @@
 \begin{equation} \label{eq:gauss_int}
 \Phi_{\vect{D}}\equiv\oint_S\vect{D}d\vect{S}=4\pi Q.
 \end{equation}
-\begin{center} 
-\begin{tabular}[t]{|p{16em}|p{16em}|} 
-\hline 
-СГС & СИ \\ 
-\hline 
-\(\Phi_{\vect{D}}\equiv\oint_S\vect{D}d\vect{S}=4\pi Q\) & \(\Phi_{\vect{D}}\equiv\oint_S\vect{D}d\vect{S}=Q\) \\ 
-\hline 
+\begin{center}
+\begin{tabular}[t]{|p{16em}|p{16em}|}
+\hline
+СГС & СИ \\
+\hline
+\(\Phi_{\vect{D}}\equiv\oint_S\vect{D}d\vect{S}=4\pi Q\) & \(\Phi_{\vect{D}}\equiv\oint_S\vect{D}d\vect{S}=Q\) \\
+\hline
 \end{tabular}
 \end{center}
 
@@ -104,7 +113,7 @@
 %\end{thebibliography}
 
 %\bibliographystyle{gost780s} % ГОСТ 7.80
-\bibliography{L2} % MachLearn.bib
+%\bibliography{L2} % MachLearn.bib
 
 % Приложение
 \appendix
@@ -114,4 +123,4 @@
 
 \end{lstlisting}
 
-\end{document}
+\end{document} 

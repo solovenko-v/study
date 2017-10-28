@@ -5,6 +5,5 @@
 \contentsline {subsection}{\numberline {1.2}\IeC {\CYRD }\IeC {\cyri }\IeC {\cyrf }\IeC {\cyrf }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyrc }\IeC {\cyri }\IeC {\cyra }\IeC {\cyrl }\IeC {\cyrsftsn }\IeC {\cyrn }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyrf }\IeC {\cyro }\IeC {\cyrr }\IeC {\cyrm }\IeC {\cyra }}{5}{subsection.1.2}
 \contentsline {section}{\numberline {2}\IeC {\CYRD }\IeC {\cyri }\IeC {\cyrv }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyrg }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyrc }\IeC {\cyri }\IeC {\cyrya }}{5}{section.2}
 \contentsline {section}{\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrk }\IeC {\cyrl }\IeC {\cyryu }\IeC {\cyrch }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyre }}{7}{equation.2.4}
-\contentsline {section}{{\Russian \CYRS \cyrp \cyri \cyrs \cyro \cyrk \ \cyrl \cyri \cyrt \cyre \cyrr \cyra \cyrt \cyru \cyrr \cyrery }}{8}{equation.2.4}
-\contentsline {section}{\numberline {A}\IeC {\CYRP }\IeC {\cyrr }\IeC {\cyri }\IeC {\cyrl }\IeC {\cyro }\IeC {\cyrzh }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyre }}{8}{appendix.A}
+\contentsline {section}{\numberline {A}\IeC {\CYRP }\IeC {\cyrr }\IeC {\cyri }\IeC {\cyrl }\IeC {\cyro }\IeC {\cyrzh }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyre }}{7}{appendix.A}
 \contentsfinish 
